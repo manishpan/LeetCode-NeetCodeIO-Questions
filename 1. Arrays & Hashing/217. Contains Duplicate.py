@@ -3,8 +3,10 @@
 
 class Solution:
     def containsDuplicate(self, nums) -> bool:
+    #Creating a hashSet to store the values we have not seen.
         hashSet = set()
 
+    #If i already exists in hashSet, then that means it has occured two times and we return True otherwise False
         for i in nums:
             if i in hashSet:
                 return True
