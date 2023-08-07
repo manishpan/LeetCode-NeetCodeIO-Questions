@@ -17,10 +17,8 @@ class Solution:
             if sum3 == 0:
                 new_flowerbed[i] = 1
                 n -= 1
-            if n <= 0:
-                return True
-            
-        return False
+        
+        return n <= 0 
         
 #Testcases:
 flowerbed = [1,0,0,0,1]
