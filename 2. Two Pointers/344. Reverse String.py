@@ -5,6 +5,7 @@
 class Solution:
     def reverseString(self, s) -> None:
     #We create two pointers L and R pointing to beginning and ending and swap the values until L < R.
+    #Other solutions involve using stack and it can be done using recursion as well.
         L, R = 0, len(s) - 1
 
         while L < R:
