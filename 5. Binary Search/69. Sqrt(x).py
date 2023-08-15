@@ -11,7 +11,8 @@ class Solution:
     # value can be less, greater than or equal to x, so we changes R, L or return mid accordingly. If the loop exits
     # normally, that means sqrt of x is not an integer. In that case, L-1 will point to round down integer of sqrt of
     # x.
-        L, R = 1, x
+        if x == 1:  return 1
+        L, R = 1, x // 2
 
         while L <= R:
             mid = (L + R) // 2
