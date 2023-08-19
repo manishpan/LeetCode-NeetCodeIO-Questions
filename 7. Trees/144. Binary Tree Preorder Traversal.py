@@ -9,6 +9,24 @@ class TreeNode:
 
 class Solution:
     def preorderTraversal(self, root):
+    #Preorder - Root Left Right, so we append root.val into res and stack first and then go to LST adding add nodes
+    # to stack and res. Once we encounter None, we pop a Node from stack and repeat the procedure.
+        if not root:
+            return 
+        res, stack = [], [root]
+
+        while stack:
+            curr = stack.pop()
+            res.append(curr.val)
+            if curr.right:
+                stack.append(curr.right)
+            if curr.left:
+                stack.append(curr.left)
+        
+        return res
+             
+
+    def preorderTraversalRecursive(self, root):
     #We create a list res, that will store the value in preorder traversal fashion.
         res = []
 
