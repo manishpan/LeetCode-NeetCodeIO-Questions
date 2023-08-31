@@ -14,6 +14,8 @@
 
 class Solution:
     def evalRPN(self, tokens) -> int:
+    #We create a stack, if we see operand we push it onto stack. If we see operator, we pop two above elements
+    #from stack(operand 2 comes first and then operand 1) and perform operation. We push the result back onto stack.
         stack = []
 
         for i in tokens:
