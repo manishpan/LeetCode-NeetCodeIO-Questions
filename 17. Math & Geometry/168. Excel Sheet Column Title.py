@@ -3,7 +3,7 @@
 
 class Solution:
 #The letter for excel column title can be found by subtracting minus 1 and taking modulus 26. After that we will
-#divide the columnNumber by 26
+#divide the columnNumber by 26.
     def convertToTitle(self, columnNumber: int) -> str:
         res = ""
 
