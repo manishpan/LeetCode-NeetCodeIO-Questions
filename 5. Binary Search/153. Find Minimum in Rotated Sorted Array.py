@@ -11,26 +11,23 @@
 #You must write an algorithm that runs in O(log n) time.
 
 class Solution:
-    def findMin(self, nums) -> int:
-    #If the first element is smaller than the last element, then the array is sorted and minimum element is at 0.
-        if nums[0] <= nums[-1]:
-            return nums[0]
-    
-    #We initialize two pointers L and R that points to the beginning and end of nums array.
-        L, R = 0, len(nums)-1
+    def findMin(self, nums) -> int:    
+    #We initialize two pointers start and end that points to the beginning and end of nums array.
+        start, end = 0, len(nums)-1
 
-    #An element is minimum element if the element that is to left of it is greater. We calculate mid and check if it
-    # is greater than mid - 1. If it is we return mid element otherwise we will need to go to the part where array
-    # is not sorter. For that, we compare mid element to first or last element and changes L or R accordingly.
-        while L <= R:
-            mid = L + ((R - L) // 2)
+    #We can see the rotated array as two arrays, one is sorted and one is unsorted. The 
+    #minimum number is always at the unsorted part. If middle number is greater than end
+    # that means we are at the sorted left part of array and minimum number is at the right
+    #otherwise left. We adjust the start and end pointers accordingly.
+        while start < end:
+            mid = start + ((end - start) >> 1)
 
-            if nums[mid] < nums[mid-1]:
-                return nums[mid]
-            elif nums[mid] > nums[-1]:
-                L = mid + 1
-            elif nums[mid] < nums[0]:
-                R = mid - 1
+            if nums[mid] > nums[end]:
+                start = mid + 1
+            else:
+                end = mid
+        
+        return nums[start]
 
 #Testcases:
 nums = [3,4,5,1,2]
