@@ -5,9 +5,11 @@ class Solution:
     def sortedSquares(self, nums):
     #We initialize L and R to point at the beginning and ending of nums. The res array will store the squares of 
     #values in nums. We will starting filling from the end of the result.
-        L, R = 0, len(nums) - 1
-        res = [0] * (R - L + 1)
+        n = len(nums)
+        L, R = 0, n - 1
+        res = [0] * n
         i = R
+        
         while i >= 0:
             if abs(nums[L]) < abs(nums[R]):
                 res[i] = nums[R] ** 2

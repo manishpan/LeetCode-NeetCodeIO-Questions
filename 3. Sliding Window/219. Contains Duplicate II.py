@@ -3,24 +3,8 @@
 
 class Solution:
     def containsNearbyDuplicate(self, nums, k: int) -> bool:
-    #We take a set that represents our window, two pointers L and R will mark the beginning and end of our sliding
-    # window. If window size is becomes k, we remove L and increment it. In next iteration if nums[R] is already
-    # in our window, that means it is a duplicate and we return True. Otherwise, we add nums[R] in our window.
-        window = set()
-        L, R = 0, 0
-
-        while R < len(nums):
-            if nums[R] in window:
-                return True
-            window.add(nums[R])
-
-            if R - L == k:
-                window.remove(nums[L])
-                L += 1
-            R += 1
-        
-        return False
-
+    
+    
 #Testcases:
 nums = [1,2,3,1]
 k = 3

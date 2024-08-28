@@ -11,11 +11,10 @@ class Solution:
     # value can be less, greater than or equal to x, so we changes R, L or return mid accordingly. If the loop exits
     # normally, that means sqrt of x is not an integer. In that case, L-1 will point to round down integer of sqrt of
     # x.
-        if x == 1:  return 1
-        L, R = 1, x // 2
+        L, R = 1, x
 
         while L <= R:
-            mid = (L + R) // 2
+            mid = L + (R - L) // 2
             sqr = mid * mid
 
             if sqr > x:
@@ -25,7 +24,7 @@ class Solution:
             else:
                 return mid
         
-        return L - 1
+        return R
 
 
 #Testcases:
@@ -33,4 +32,10 @@ x = 4
 print(Solution().mySqrt(x))
 
 x = 8
+print(Solution().mySqrt(x))
+
+x = 0
+print(Solution().mySqrt(x))
+
+x = 1
 print(Solution().mySqrt(x))

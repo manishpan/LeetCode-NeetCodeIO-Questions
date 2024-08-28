@@ -11,7 +11,7 @@ class Solution:
     #While low <= high, we calculate and do comparison of middle value with its target value. We changes low or high
     #accordingly, in doing so we have eliminated half of the nums.
         while low <= high:
-            mid = (low + high) // 2
+            mid = low + (high - low) // 2
             if nums[mid] > target:
                 high = mid - 1
             elif nums[mid] < target:

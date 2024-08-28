@@ -19,12 +19,19 @@
 # def guess(num: int) -> int:
 
 class Solution:
+    def guess(self, num):
+        if num > pick:
+            return -1
+        elif num < pick:
+            return 1
+        return 0
+
     def guessNumber(self, n: int) -> int:
         l, r = 1, n
 
         while True:
             num = (l + r) // 2
-            res = guess(num)
+            res = self.guess(num)
             if res == 1:
                 l = num + 1
             elif res == -1:
@@ -33,11 +40,14 @@ class Solution:
                 return num
 
 #Testcases:
-n = 10, pick = 6
+n = 10
+pick = 6
 print(Solution().guessNumber(n))
 
-n = 1, pick = 1
+n = 1
+pick = 1
 print(Solution().guessNumber(n))
 
-n = 2, pick = 1
+n = 2
+pick = 1
 print(Solution().guessNumber(n))

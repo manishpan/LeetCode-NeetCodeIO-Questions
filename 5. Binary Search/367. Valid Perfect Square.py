@@ -30,3 +30,6 @@ print(Solution().isPerfectSquare(num))
 
 num = 14
 print(Solution().isPerfectSquare(num))
+
+num = 1
+print(Solution().isPerfectSquare(num))
