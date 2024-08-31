@@ -9,8 +9,7 @@ class Solution:
     #For s to be subsequence of t, length of s has to be less or equal to t
         len_s = len(s)
         len_t = len(t)
-        if len_s > len_t:
-            return False
+
     #If character matches increment i.
         i, j = 0, 0
         while i != len_s and j != len_t:
@@ -18,9 +17,7 @@ class Solution:
                 i += 1
             j += 1
     #If string s was completely exhausted that means s is a subsequence of t. 
-        if i == len_s:
-            return True
-        return False
+        return i == len_s
 
 #Test Cases
 s = "abc"
