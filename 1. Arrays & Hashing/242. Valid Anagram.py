@@ -10,15 +10,15 @@ class Solution:
             return False
     
     #Count array of length 256 to mark if we have seen an character or not
-        count = [0] * 256
+        res = [0] * 256
 
     #If a character is in s, +1 is marked as flag and in t that flag is once again down.
         for i in range(len(s)):
-            count[ord(s[i])] += 1
-            count[ord(t[i])] -= 1
+            res[ord(s[i]) - ord('a')] += 1
+            res[ord(t[i]) - ord('a')] -= 1
     
     #If all the flags are down, then that means they are anagrams
-        for x in count:
+        for x in res:
             if x != 0:
                 return False
         return True
