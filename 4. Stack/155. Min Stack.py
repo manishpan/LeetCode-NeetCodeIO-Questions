@@ -26,13 +26,9 @@ class MinStack:
         self.stack.pop()
         
     def top(self) -> int:
-        if not self.stack:
-            return -1
         return self.stack[-1] 
 
     def getMin(self) -> int:
-        if not self.minStack:
-            return -1
         return self.minStack[-1]
 
 # Your MinStack object will be instantiated and called as such:
