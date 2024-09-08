@@ -14,7 +14,7 @@
 class Solution:
     def decodeString(self, s: str) -> str:
     # We keep on pushing until we encount ]. When we encounter ], we form a string tmp and
-    # number n and push the tmp * n.
+    # number n and push the tmp * n   
         stack = []
 
         for i in range(0, len(s)):
